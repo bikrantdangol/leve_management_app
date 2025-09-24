@@ -67,7 +67,7 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
                 },
                 child: Text(
                   'Submit',
-                  style: TextStyle(color: Colors.white),
+                  //style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
