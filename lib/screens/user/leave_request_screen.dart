@@ -65,10 +65,7 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
                   await provider.submitRequest(user.uid, _reasonController.text, _selectedDate);
                   Navigator.pop(context);
                 },
-                child: Text(
-                  'Submit',
-                  //style: TextStyle(color: Colors.white),
-                ),
+                child: Text('Submit'),
               ),
             ],
           ),
