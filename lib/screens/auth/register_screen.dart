@@ -17,7 +17,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent, // Set background color to skyblue
+      backgroundColor: Colors.lightBlueAccent, // Set background color
       appBar: AppBar(
         title: Text(
           'REGISTER', 
@@ -28,7 +28,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
         centerTitle: true, // Center title
-        backgroundColor: Colors.blue, // You can adjust the app bar color here
+        backgroundColor: Colors.blue, // the app bar color
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
