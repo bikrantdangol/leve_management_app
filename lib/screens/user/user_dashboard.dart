@@ -25,14 +25,14 @@ class _UserDashboardState extends State<UserDashboard> {
     final leaveProvider = Provider.of<LeaveProvider>(context);
 
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent, // Set background color to skyBlue
+      backgroundColor: Colors.lightBlueAccent, // Set background color
       appBar: AppBar(
         title: Text(
-          'User Dashboard: ${user.name}', // Title in uppercase
+          'User Dashboard: ${user.name}',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold, // Bold title text
-            letterSpacing: 1.5, // Add spacing for a sharper look
+            letterSpacing: 1.5, // Add spacing
           ),
         ),
         centerTitle: true, // Center the title
@@ -43,7 +43,7 @@ class _UserDashboardState extends State<UserDashboard> {
         child: SingleChildScrollView( // Enable scrolling for content
           child: Column(
             children: [
-              SizedBox(height: 50), // Add space at the top for better layout
+              SizedBox(height: 50), // Add space at the top
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -51,23 +51,22 @@ class _UserDashboardState extends State<UserDashboard> {
                     MaterialPageRoute(builder: (_) => LeaveRequestScreen())
                   );
                 },
-                child: Text(
-                  'Request Leave',
-                 // style: TextStyle(color: Colors.white),
-                  ),
+                child: Text('Request Leave'),
               ),
               SizedBox(height: 20), // Add space between button and list
               leaveProvider.userRequests.isEmpty
-                  ? Center(child: Text(
-                    'No leave requests yet.',
-                    style: TextStyle(color: Colors.white),))
-                  : ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: leaveProvider.userRequests.length,
-                      itemBuilder: (context, index) {
-                        return LeaveRequestTile(request: leaveProvider.userRequests[index]);
-                      },
-                    ),
+              ? Center(child: Text(
+                  'No leave requests yet.',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ):
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: leaveProvider.userRequests.length,
+                itemBuilder: (context, index) {
+                  return LeaveRequestTile(request: leaveProvider.userRequests[index]);
+                },
+              ),
             ],
           ),
         ),

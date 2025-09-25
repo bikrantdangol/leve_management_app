@@ -1,10 +1,10 @@
 import '../models/leave_request.dart';
 
 class LeaveService {
-  // In-memory storage: List of LeaveRequest
+  // Stores leave requests temporarily in memory
   static final List<LeaveRequest> _requests = [];
 
-  // Simulated unique ID for requests
+  // Used to generate a unique ID for each request
   int _requestIdCounter = 0;
 
   Future<void> submitLeaveRequest(LeaveRequest request) async {

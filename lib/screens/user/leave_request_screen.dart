@@ -16,14 +16,14 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent, // Set background color to skyBlue
+      backgroundColor: Colors.lightBlueAccent, // Set background color
       appBar: AppBar(
         title: Text(
-          'Leave Request', // Title in uppercase
+          'Leave Request',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold, // Bold title text
-            letterSpacing: 1.5, // Add spacing for a sharper look
+            letterSpacing: 1.5, // Add spacing
           ),
         ),
         centerTitle: true, // Center the title
@@ -34,7 +34,7 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
         child: SingleChildScrollView( // Enable scrolling for content
           child: Column(
             children: [
-              SizedBox(height: 50), // Add space at the top for better layout
+              SizedBox(height: 50), // Add space at the top
               CustomTextField(controller: _reasonController, label: 'Reason'),
               SizedBox(height: 20), // Space between text field and date section
               Row(

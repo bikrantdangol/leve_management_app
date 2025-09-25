@@ -31,7 +31,7 @@ class UserProvider extends ChangeNotifier {
         return true;
       }
     } catch (e) {
-      // Handle error, e.g., user exists
+      // Handle error, like: user exists
     }
     return false;
   }

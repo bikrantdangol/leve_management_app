@@ -4,10 +4,10 @@ class AuthService {
   // In-memory storage: Map of email -> UserModel
   static final Map<String, UserModel> _users = {};
 
-  // Simulated unique ID generator
+  // Used to create a new user ID every time
   int _userIdCounter = 0;
 
-  UserModel? get currentUser => null; // Not used without Firebase, use provider for current user
+  UserModel? get currentUser => null; // Placeholder: use Provider to access current user (no Firebase)
 
   Future<UserModel?> register(String name, String email, String password) async {
     if (_users.containsKey(email)) {
@@ -29,6 +29,6 @@ class AuthService {
   }
 
   Future<void> logout() async {
-    // No-op for in-memory
+    // Not needed — user data is only stored in memory
   }
 }

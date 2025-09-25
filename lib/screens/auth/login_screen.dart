@@ -18,18 +18,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent, // Set background color to skyblue
+      backgroundColor: Colors.lightBlueAccent, // Set background color
       appBar: AppBar(
         title: Text(
           'LOGIN', 
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold, // Make title bold
-            letterSpacing: 1.5, // Add spacing to make it look better in caps
+            letterSpacing: 1.5, // Add spacing
           ),
         ),
         centerTitle: true, // Center title
-        backgroundColor: Colors.blue, // You can adjust the app bar color here
+        backgroundColor: Colors.blue, // adjust the app bar color
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -61,10 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login failed', style: TextStyle(color: Colors.white),)));
                   }
                 },
-                child: Text(
-                  'Login',
-                  // style: TextStyle(color: Colors.white),
-                ),
+                child: Text('Login'),
               ),
               TextButton(
                 onPressed: () {
