@@ -26,8 +26,17 @@ class LeaveProvider extends ChangeNotifier {
   /// - Sends it to the backend/service
   /// - Reloads user requests to reflect changes
   /// - Notifies listeners (UI) to rebuild with updated data
-  Future<void> submitRequest(String userId, String reason, DateTime date) async {
-    final request = LeaveRequest(userId: userId, reason: reason, date: date, id: '');
+  Future<void> submitRequest(
+    String userId,
+    String reason,
+    DateTime date,
+  ) async {
+    final request = LeaveRequest(
+      userId: userId,
+      reason: reason,
+      date: date,
+      id: '',
+    );
     await _leaveService.submitLeaveRequest(request);
     await loadUserRequests(userId);  // Refresh the user's leave list
     notifyListeners();               // Notify UI to update
