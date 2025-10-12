@@ -1,7 +1,7 @@
 import '../models/user_model.dart';
 
 class AuthService {
-  // In-memory storage: Map of email -> UserModel
+  // Stores users in memory, using email as the key
   static final Map<String, UserModel> _users = {};
 
   // Used to create a new user ID every time
