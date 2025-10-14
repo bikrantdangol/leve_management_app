@@ -49,23 +49,51 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 20), // Space between button and text field
               ElevatedButton(
                 onPressed: () async {
-                  final provider = Provider.of<UserProvider>(context, listen: false);
-                  final success = await provider.login(_emailController.text, _passwordController.text);
+                  final provider = Provider.of<UserProvider>(
+                    context,
+                    listen: false
+                  );
+                  final success = await provider.login(
+                    _emailController.text,
+                    _passwordController.text
+                  );
                   if (success) {
                     if (provider.user!.isAdmin) {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => AdminDashboard()));
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => AdminDashboard()
+                        )
+                      );
                     } else {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => UserDashboard()));
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => UserDashboard()
+                        )
+                      );
                     }
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login failed', style: TextStyle(color: Colors.white),)));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Login failed',
+                          style: TextStyle(
+                            color: Colors.white
+                          ),
+                        )
+                      )
+                    );
                   }
                 },
                 child: Text('Login'),
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => RegisterScreen()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => RegisterScreen())
+                  );
                 },
                 child: Text(
                   "Don't have an account? Register",
