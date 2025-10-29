@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../models/leave_request.dart';      // Model representing a leave request
-import '../services/leave_service.dart';   // Service to interact with backend or data source
+import '../models/leave_request.dart';      
+import '../services/leave_service.dart';   
 
 /// A provider that manages leave-related state and logic for the app
-/// Extends ChangeNotifier so it can notify UI widgets when data changes
 class LeaveProvider extends ChangeNotifier {
   // Instance of LeaveService to handle API/data operations
   final LeaveService _leaveService = LeaveService();

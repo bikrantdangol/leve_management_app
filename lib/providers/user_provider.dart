@@ -1,15 +1,10 @@
-// Flutter material package for UI-related classes
 import 'package:flutter/material.dart';
-
-// Importing the user model class
-import '../models/user_model.dart'; // Represents the structure of a user
-
-// Importing the authentication service to handle login/register/logout logic
+import '../models/user_model.dart'; 
 import '../services/auth_service.dart';
 
 /// This provider manages user authentication and user state
-/// It uses ChangeNotifier so the UI can listen for changes and rebuild when needed
 class UserProvider extends ChangeNotifier {
+
   // Instance of the AuthService to handle backend auth logic
   final AuthService _authService = AuthService();
 
@@ -23,6 +18,7 @@ class UserProvider extends ChangeNotifier {
   /// Returns true if login is successful, otherwise false
   Future<bool> login(String email, String password) async {
     try {
+
       // Call the AuthService to perform login
       final user = await _authService.login(email, password);
 
@@ -35,8 +31,6 @@ class UserProvider extends ChangeNotifier {
     } catch (e) {
       // Handle login error (e.g., show snackbar or log error)
     }
-
-    // Return false if login fails
     return false;
   }
 
@@ -44,6 +38,7 @@ class UserProvider extends ChangeNotifier {
   /// Returns true if registration is successful, otherwise false
   Future<bool> register(String name, String email, String password) async {
     try {
+
       // Call the AuthService to perform registration
       final user = await _authService.register(name, email, password);
 
@@ -56,8 +51,6 @@ class UserProvider extends ChangeNotifier {
     } catch (e) {
       // Handle registration errors (e.g., email already in use)
     }
-
-    // Return false if registration fails
     return false;
   }
 
